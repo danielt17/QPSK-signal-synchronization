@@ -99,6 +99,7 @@ xlabel('In-Phase','FontSize',12)
 ylabel('Quadrature','FontSize',12)
 title('I\\Q plot - Comparison between before and after applying the fractional delay filter','FontSize',12)
 legend('Before fractional delay filter','After fractional delay filter')
+axis('equal')
 subplot(4, 2, 5)
 plot(get_t(samples_old(1:200)),real(samples_old(1:200)),get_t(samples(1:200)),real(samples(1:200)),'LineWidth',2)
 grid on;
@@ -139,6 +140,7 @@ xlabel('In-Phase','FontSize',12)
 ylabel('Quadrature','FontSize',12)
 title('I\\Q plot - Comparison between before and after applying a frequency offset channel','FontSize',12)
 legend('Before frequency offset channel','After frequency offset channel')
+axis('equal')
 subplot(3, 2, 5)
 plot(get_t(samples_old(1:600)),real(samples_old(1:600)),get_t(samples(1:600)),real(samples(1:600)),'LineWidth',2)
 grid on;
@@ -166,6 +168,7 @@ xlabel('In-Phase','FontSize',12)
 ylabel('Quadrature','FontSize',12)
 title('I\\Q plot - Comparison between before and after applying an AWGN channel','FontSize',12)
 legend('Before AWGN channel','After AWGN channel')
+axis('equal')
 
 %% Time synchronization - Based on Mueller and Muller Timing Synchronization Algorithm
 % further reading https://wirelesspi.com/mueller-and-muller-timing-synchronization-algorithm/
@@ -205,6 +208,7 @@ xlabel('In-Phase','FontSize',12)
 ylabel('Quadrature','FontSize',12)
 title('I\\Q plot - Comparison between before and after applying Mueller and Muller timing synchronization algorithm','FontSize',12)
 legend('Before timing synchronization','After timing synchronization')
+axis('equal')
 
 %% Coarse frequency synchronization
 
@@ -265,6 +269,7 @@ xlabel('In-Phase','FontSize',12)
 ylabel('Quadrature','FontSize',12)
 title('I\\Q plot - Comparison between before and after applying coarse frequency synchronization','FontSize',12)
 legend('Before coarse frequency synchronization','After coarse frequency synchronization')
+axis('equal')
 
 
 %% Fine Frequency Synchronization
@@ -308,6 +313,7 @@ xlabel('In-Phase','FontSize',12)
 ylabel('Quadrature','FontSize',12)
 title('I\\Q plot - Comparison between before and after applying fine frequency synchronization','FontSize',12)
 legend('Before fine frequency synchronization','After fine frequency synchronization')
+axis('equal')
 subplot(4,2,[7 8])
 plot(freq_log,'-','LineWidth',2)
 grid on;
@@ -330,7 +336,7 @@ xlabel('In-Phase','FontSize',12)
 ylabel('Quadrature','FontSize',12)
 title(strcat('I\\Q plot - Comparison between the transmitted signals and the final synchronized signal at the receiver. EVM = ',num2str(EVM_value),' [dB]'),'FontSize',12)
 legend('Received synchronized signal','Transmitted signal')
-
+axis('equal')
 
 %% Functions
 
