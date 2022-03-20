@@ -154,6 +154,19 @@ ylabel('Amplitude [U.O.S]','FontSize',12)
 title('Quadrature vs time','FontSize',12)
 legend('Before frequency offset channel','After frequency offset channel')
 
+% AWGN channel
+
+samples_old = samples;
+samples = awgn(samples,15,'measured');
+
+figure;
+plot(real(samples_old),imag(samples_old),'o',real(samples),imag(samples),'o','LineWidth',2)
+grid on;
+xlabel('In-Phase','FontSize',12)
+ylabel('Quadrature','FontSize',12)
+title('I\\Q plot - Comparison between before and after applying an AWGN channel','FontSize',12)
+legend('Before AWGN channel','After AWGN channel')
+
 %% Time synchronization - Based on Mueller and Muller Timing Synchronization Algorithm
 % further reading https://wirelesspi.com/mueller-and-muller-timing-synchronization-algorithm/
 
@@ -162,8 +175,6 @@ legend('Before frequency offset channel','After frequency offset channel')
 % timing synchronization algorithm
 
 samples_interpolated = resample(samples, 16, 1);
-
-
 
 mu = 0; % initial estimate of phase of the sample
 out = zeros(1,length(samples)+10);
